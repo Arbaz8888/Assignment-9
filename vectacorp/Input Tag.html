@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input Field Focus</title>
+  <script src="jquery-3.7.1.min.js"></script>
+  <style>
+    input {
+      background-color: white;
+    }
+    input:focus {
+      background-color: lightgray;
+    }
+  </style>
+  <script>
+    $(document).ready(function() {
+      const inputField = $('#myInput');
+
+      inputField.focus(function() {
+        inputField.css('background-color', 'lightgray');
+      });
+
+      inputField.blur(function() {
+        inputField.css('background-color', 'white');
+      });
+    });
+  </script>
+</head>
+<body>
+  <input type="text" id="myInput" placeholder="Enter text">
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Handling</title>
+  <script src="jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      const linkElement = $('#myLink');
+
+      linkElement.attr('href', 'https://modulemedia.com');
+
+      linkElement.on('click', function(event) {
+        event.preventDefault();
+        linkElement.css('color', 'red');
+        alert('Clicked on ' + event.target.nodeName); 
+      });
+    });
+  </script>
+</head>
+<body>
+  <a id="myLink" href="#">Visit ModuleMedia</a>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+  <script src="jquery-3.7.1.min.js"></script>
+  <style>
+    input {
+      border: 1px solid black;
+    }
+  </style>
+  <script>
+    $(document).ready(function() {
+      const form = $('#myForm');
+      const nameInput = $('#name');
+      const emailInput = $('#email');
+
+      form.submit(function(event) {
+          event.preventDefault();
+        if (nameInput.val().trim() === '') {
+          nameInput.css('border', '1px solid red');
+          alert('Name is required.');
+        } else {
+          nameInput.css('border', '1px solid green');
+        }
+        if (emailInput.val().trim() === '') {
+          emailInput.css('border', '1px solid red');
+          alert('Email is required.');
+        } else {
+          emailInput.css('border', '1px solid green');
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <form id="myForm">
+    <input type="text" id="name" placeholder="Name">
+    <input type="email" id="email" placeholder="Email">
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

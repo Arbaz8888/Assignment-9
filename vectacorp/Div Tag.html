@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Window Resize Event</title>
+  <script src="jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      const resizeDiv = $('#resizeDiv');
+
+      function displayWindowSize() {
+        const windowWidth = $(window).width();
+        const windowHeight = $(window).height();
+        resizeDiv.text('Width: ' + windowWidth + 'px, Height: ' + windowHeight + 'px');
+      }
+
+      $(window).resize(function() {
+        displayWindowSize();
+      });
+      displayWindowSize();
+    });
+  </script>
+</head>
+<body>
+  <div id="resizeDiv">Width: 0px, Height: 0px</div>
+</body>
+</html>

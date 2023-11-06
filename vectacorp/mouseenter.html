@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Handling</title>
+  <script src="jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      const divElement = $('#myDiv');
+
+      divElement.css({
+        width: '400px',
+        height: '400px',
+        backgroundColor: 'lightblue',
+      });
+
+      divElement.on('click', function() {
+        alert('Mouse clicked on the div.');
+      });
+
+      divElement.on('mouseenter', function() {
+        alert('Mouse entered the div.');
+      });
+
+      divElement.on('mouseleave', function() {
+        alert('Mouse left the div.');
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="myDiv"></div>
+</body>
+</html>
